@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #d5bbb1;
+}
+.btn {
+  padding: 10px 15px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background-color: #C98CA7(86, 209, 86);
+  cursor: pointer;
+}
+.delete {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+.slider-wrapper {
+  height: 60vh;
+  margin: 50px 0 10px;
+  overflow: hidden;
+}
+
+.slider-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider-wrapper {
+  position: relative;
+}
+.slider-item {
+  position: inherit;
+  display: none;
+  transition: all 0.3s;
+}
+.slider-item.active {
+  display: block;
+  height: 100%;
+  position: relative;
+  /* opacity: 0; */
+}
+.slider-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  width: 70%;
+  color: white;
+}
+.slider-section {
+  position: relative;
+}
+.pagination,
+.auto-sliding,
+.pagination-btns {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.pagination {
+  margin: 0;
+}
+.pagination .btn {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  transition: all 0.3s;
+}
+.pagination .btn#next {
+  right: 20px;
+  left: unset;
+}
+.pagination .btn:hover {
+  background-color: white;
+  color: black;
+}
+.pagination-btns {
+  justify-content: space-between;
+}
+.auto-sliding .btn {
+  margin: 0 10px;
+}
+.pagination-bullets {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 20px; */
+}
+.pgn-bullet {
+  cursor: pointer;
+  margin: 0 10px;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+.pgn-bullet.active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+@media (max-width: 1024px) {
+  .slider-info {
+    width: 50%;
+  }
+}
+
+.form {
+  width: 90%;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 30px;
+  margin-bottom: 50px;
+  margin-top: 100px;
+  font-size: 24px;
+  background-color: #9cc4b2;
+}
+.input-field {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+label {
+  width: 30%;
+  color: #393d3f;
+}
+input {
+  width: calc(70% - 20px);
+  outline: none;
+  padding: 0 10px;
+  height: 30px;
+}
+
+.form button {
+  background-color: #c98ca7;
+  color: white;
+}
+.error-message {
+  display: block;
+  height: 30px;
+  margin-top: 10px;
+  color: #e76d83;
+  width: 70%;
+  margin-left: 30%;
+  text-align: right;
+}
+
+input.error {
+  border: 1px solid red;
+}
+input.correct {
+  border: 1px solid green;
+}
+
+@media (max-width: 1024px) {
+  .form {
+    width: 90%;
+  }
+  .input-field {
+    flex-direction: column;
+  }
+  label {
+    margin-bottom: 20px;
+    text-align: center;
+    margin-right: 0;
+  }
+  input {
+    width: 90%;
+  }
+  .error-message {
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.modal {
+  border: 1px solid black;
+  padding: 20px;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.modal.open {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  background-color: rgba(195, 195, 195, 0.9);
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 94, 22);
+  padding: 20px;
+  color: white;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.required {
+  color: red;
+  margin-left: 5px;
+}
+.none {
+  display: none;
+  border: 1px solid black;
+}
